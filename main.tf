@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "FCT" {
   ami = var.image
   instance_type = var.instance_type
-  security_groups = [data.aws_security_group.sg.id]
+  vpc_security_group_ids = [ data.aws_security_group.sg.id ]
   tags = {
     Name = "Terraform-instance"
   }
